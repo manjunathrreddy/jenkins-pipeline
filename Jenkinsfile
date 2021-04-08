@@ -6,7 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 step{
-                docker run --rm -it --name terraform -v $WORKSPACE -w $WORKSPACE hashicorp/terraform version
+                sh 'docker run --rm -it --name terraform -v $WORKSPACE -w $WORKSPACE hashicorp/terraform:light version'
                 }
             }
         }
