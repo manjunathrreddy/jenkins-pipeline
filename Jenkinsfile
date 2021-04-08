@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'terraform:light' }
+        docker { image 'hashicorp/terraform:light' }
     }
     stages {
         stage('Test') {
@@ -10,6 +10,3 @@ pipeline {
         }
     }
 }
-
-
-docker run -i -t hashicorp/terraform:light plan
