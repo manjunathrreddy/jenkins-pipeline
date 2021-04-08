@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    tools{
         tool name: 'jenkins-terraform', type: 'terraform'
-    }
     stages {
         stage('Checkout the code') {
             steps {
