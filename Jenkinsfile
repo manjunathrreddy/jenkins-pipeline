@@ -1,12 +1,15 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
+        docker { image 'hashicorp/terraform:light' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'terraform version'
             }
         }
     }
 }
+
+
+docker run -i -t hashicorp/terraform:light plan
