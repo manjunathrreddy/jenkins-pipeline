@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'terraform version'
+                docker run --rm -it --name terraform -v $(pwd):$WORKSPACE -w $WORKSPACE hashicorp/terraform:light apply
             }
         }
     }
